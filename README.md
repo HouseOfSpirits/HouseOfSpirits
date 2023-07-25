@@ -1,3 +1,3 @@
 <div align="center">
-<img src="https://raw.githubusercontent.com/sankalp475/image_/main/HouseOfSpritis.jpg?token=GHSAT0AAAAAACFOMPMP3C7MLH6WHRZ6LZMQZF7T2AA" align="center" style="width: 100%" />
+<img src="https://drive.google.com/file/d/1oduB-xNwDiQvnw-BgzPti7n4YRk4yll0/view?usp=sharing" align="center" style="width: 100%" />
 </div>  
