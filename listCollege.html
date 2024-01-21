@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <h1>Sending Headers With API Request </h1>
+
+    <h1>Axious</h1>
+    <h2>Updating Query Strings</h2>
+
+    <input type="text" placeholder="enter country" style="height: 40px; font-size: 20px;">
+    <button>Search</button>
+    <ul id="list">
+        <li></li>
+    </ul>
+
+
+
+    
+    <script>
+        // const url = "https://icanhazdadjoke.com/";
+
+        // async function getJokes() {
+        //     try {
+        //         const config = { headers : { Accept : "application/json" } };
+        //         let res = await axios.get(url , config);
+        //         console.log(res.data);
+        //     } catch (err){
+        //         console.log(err);
+        //     }
+        // }
+
+
+        
+
+        let url = "http://universities.hipolabs.com/search?name=";
+
+        let btn = document.querySelector('button');
+        let country = "";
+
+        btn.addEventListener("click", async() => {
+            console.log("button was clicked");
+            let country = document.querySelector("input").value;
+            // console.log(country);
+            let colArr = await getColleges(country);
+            show(colArr);
+        });
+
+        function show(colArr) {
+            let list = document.querySelector('#list')
+            list.innerText = "";
+            for(col of colArr){
+                console.log(col.name);
+
+                let li = document.createElement("li");
+                li.innerText = col.name;
+                list.appendChild(li);
+            }
+        }
+
+        async function getColleges(country){
+            try {
+                let res = await axios.get(url + country );
+                // console.log(res.data);
+                return res.data;
+            } catch(e){
+                console.log( "error : ", e);
+                return [];
+            }
+        }
+
+        // getColleges();
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo.use</title>
+    <style>
+        body {
+            background-color: #C3E2C2;
+        }
+
+        h1 {
+            color: #820300;
+            background-color: #7ED7C1;
+            width: 200px;
+            margin-left: 30%;
+            padding-left: 40px;
+        }
+
+        .main {
+            background-color: rgb(240, 219, 175);
+            padding: 20px;
+
+        }
+
+        input {
+            padding: 10px 5px 10px 20px;
+            width: 200px;
+            margin-left: 30px;
+            background-color: rgb(240, 219, 175);
+            border: 1px solid grey;
+        }
+
+        .addbtn {
+            margin-left: 20px;
+            border: 1px solid black;
+            border-radius: 4px;
+            background-color: #304D30;
+            color: white;
+        }
+
+        ul {
+            background-color: #B06161;
+            padding: 20px;
+            width: 300px;
+        }
+
+        li {
+            background-color: #DC8686;
+            margin: 5px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .delete {
+            position: absolute;
+            right: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Todo App</h1> <br>
+    <div class="main">
+        <input type="text" placeholder="enter the task">
+        <button class="addbtn">Add Task</button>
+    </div>
+    <ul>
+        <li>Code <button class="delete">delete</button></li>
+        <li>Eat <button class="delete">delete</button></li>
+        <li>Sleep <button class="delete">delete</button></li>
+    </ul>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

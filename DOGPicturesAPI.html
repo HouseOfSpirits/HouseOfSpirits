@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios</title>
+    <style>
+        * {
+            margin: 0 auto;
+            margin-top: 30px;
+            width: 800px;
+            background-color: lightcyan;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Axios</h1>
+    <h3>Library to make HTTP requests</h3>
+    <p>
+        async function getFacts() {
+        try{
+        let res = await axios.get(url);
+        console.log(res);
+        } catch(e) {
+        console.log("ERROR - ", e);
+        }
+        }
+    </p>
+    <div style="text-align: center;  height: 100vh; padding: 30px;">
+        <h1 style="background-color: lightcoral; color: lightgreen;">GET DOG IMAGE</h1>
+        <button
+            style="background-color: cadetblue; color: yellow; border: none; border-radius: 8px; font-size: 25px; padding: 10px; width: 300px;">Show Image</button>
+        <!-- <div style="background-color: black; height: 200px; color: white;  padding: 20px;"> -->
+            <img src="" alt="" id="result" width="400px">
+        <!-- </div> -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script>
+
+        let btn = document.querySelector('button');
+
+        btn.addEventListener("click", async () => {
+            console.log("button was clicked.");
+            let message = await getFacts();
+            console.log(message);
+            let img = document.querySelector("#result");
+            // img.src = message;
+            img.setAttribute("src", message);
+        })
+
+        let url = "https://dog.ceo/api/breeds/image/random";
+        async function getFacts() {
+            try {
+                let res = await axios.get(url);
+                console.log(res);
+                console.log(res.data.message);
+                return res.data.message;
+            } catch (e) {
+                console.log("ERROR - ", e);
+                return "No Fact Found";
+            }
+        }
+
+        // getFacts();
+
+
+
+
+    </script>
+</body>
+
+</html>
