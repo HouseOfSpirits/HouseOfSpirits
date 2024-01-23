@@ -3,9 +3,9 @@ const scroll = new LocomotiveScroll({
     smooth: true
 });
 
-function circleMouseFollower(){
-    window.addEventListener("mousemove",function(){
-        DocumentTimeline.querySelector("#minicircle").style.transform = translate(${dets.clientX}px, ${dets.ClientY}px);
+function circleMouseFollower() {
+    window.addEventListener("mousemove", function () {
+        DocumentTimeline.querySelector("#minicircle").style.transform = translate(${ dets.clientX }px, ${ dets.ClientY }px);
     })
 }
 
